@@ -21,7 +21,7 @@ steps:
     displayName: "npm install and build"
 
   - script: |
-      npm test
+      npm run test-ci
     displayName: "npm run test-ci"
 
   - task: PublishBuildArtifacts@1
