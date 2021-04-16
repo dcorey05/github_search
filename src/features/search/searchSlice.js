@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { searchUsers } from "./searchAPI";
 
 const initialState = {
-  items: null,
+  items: [],
   incomplete_results: false,
   total_count: 0,
   status: "idle",
