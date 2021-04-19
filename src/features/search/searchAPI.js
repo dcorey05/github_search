@@ -17,7 +17,4 @@ export const searchUsers = (query, page, pageSize) => {
       return data;
     });
   });
-  // return new Promise((resolve) =>
-  //   setTimeout(() => resolve({ data: amount }), 500)
-  // );
 };

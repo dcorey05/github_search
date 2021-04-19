@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   executeUserSearch,
@@ -6,17 +6,12 @@ import {
   selectPageSize,
   selectQuery,
   selectSearchResults,
-  selectSearchIncompleteResults,
-  selectSearchStatus,
   selectSearchTotalCount,
   setPage,
 } from "./searchSlice";
-// import styles from './Counter.module.css';
 
 const Pagination = () => {
   const results = useSelector(selectSearchResults);
-  const incomplete = useSelector(selectSearchIncompleteResults);
-  const status = useSelector(selectSearchStatus);
   const totalCount = useSelector(selectSearchTotalCount);
   const currentPage = useSelector(selectCurrentPage);
   const pageSize = useSelector(selectPageSize);
@@ -24,8 +19,6 @@ const Pagination = () => {
   const dispatch = useDispatch();
 
   const pages = Math.ceil(totalCount / pageSize);
-
-  // console.log(`pages: ${pages}. currentpage: ${currentPage}`);
 
   const changePage = (page) => {
     dispatch(setPage(page));
