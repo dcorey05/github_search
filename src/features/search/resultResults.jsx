@@ -14,6 +14,11 @@ const SearchResults = () => {
         {pageResults &&
           pageResults.map((item) => (
             <li key={item.id}>
+              <img
+                src={item.avatar_url}
+                alt=""
+                style={{ height: "50px", width: "50px" }}
+              />
               <a href={item.html_url}>{item.login}</a>
             </li>
           ))}
