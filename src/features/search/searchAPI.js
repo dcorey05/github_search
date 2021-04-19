@@ -1,7 +1,9 @@
 // search GitHub API
-export const searchUsers = (query) => {
+export const searchUsers = (query, page, pageSize) => {
   return fetch(
-    `https://api.github.com/search/users?q=${encodeURIComponent(query)}`
+    `https://api.github.com/search/users?page=${page}&per_page=${pageSize}&q=${encodeURIComponent(
+      query
+    )}`
   ).then((response) => {
     if (response.status !== 200) {
       console.log(

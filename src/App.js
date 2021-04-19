@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import { Counter } from "./features/counter/Counter";
 import SearchBar from "./features/search/searchBar";
 import SearchResults from "./features/search/resultResults";
+import Pagination from "./features/search/pagination";
 import "./App.css";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <header className="App-header">
         <SearchBar />
         <SearchResults />
+        <Pagination />
         {/* <img src={logo} className="App-logo" alt="logo" />
         <Counter />
         <p>

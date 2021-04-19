@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { executeUserSearch } from "./searchSlice";
+import {
+  executeUserSearch,
+  resetResults,
+  selectPageSize,
+  selectQuery,
+  setQuery,
+} from "./searchSlice";
 // import styles from './Counter.module.css';
 
 const SearchBar = () => {
-  // const count = useSelector(selectCount);
+  // const query = useSelector(selectQuery);
+  const pageSize = useSelector(selectPageSize);
   const dispatch = useDispatch();
-  const [searchQuery, setSearchQuery] = useState("");
+  const [query, setSearchQuery] = useState("");
 
   // const incrementValue = Number(incrementAmount) || 0;
 
@@ -17,8 +24,10 @@ const SearchBar = () => {
         <button
           type="button"
           onClick={() => {
-            console.log("click! query: " + searchQuery);
-            dispatch(executeUserSearch(searchQuery));
+            // console.log("click! query: " + searchQuery);
+            dispatch(resetResults());
+            dispatch(setQuery(query));
+            dispatch(executeUserSearch({ query, page: 1, pageSize }));
           }}
         >
           search
